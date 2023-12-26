@@ -1,0 +1,235 @@
+/* 
+
+---- typography ----  
+
+font-sizes : 10 12 14 16 18 20 24 30 36 44 52 62 74 86 98
+font-weights : 400 500 600 700
+line-heights : 1 1.1 1.2 1.6
+letter-spacings : -0.5 1 
+
+---- colors ----
+
+primary : #e67e22 
+  tints : #fae5d3 #fdf2e9
+  shades : #cf711f #45260a
+grays : #333 #555 #666 #888 #ccc #fff
+accents : 
+
+---- shadows ----
+
+---- border radius ----
+0.8rem
+
+---- whitespace ----
+
+spacing : 2 4 8 12 16 24 32 48 64 80 96 128
+
+*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 10px => would have made it easier to work with rem units
+  but if the user has set a default size setting to his browser that wont work. 
+  So we work with percentages to respect the users browser setting.
+  As the default font size is 16px, we need to set the font size to 62.5% to get a default 10px.
+  */
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  overflow-x: hidden;
+}
+
+.margin-right-small {
+  margin-right: 1.6rem !important;
+}
+.margin-bottom-medium {
+  margin-bottom: 4.8rem !important;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1.6rem 3.2rem;
+  border-radius: 0.8rem;
+  transition: all 0.3s;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn--emph:link,
+.btn--emph:visited {
+  background-color: #e67e22;
+  color: white;
+}
+.btn--emph:hover,
+.btn--emph:active {
+  background-color: #cf711f;
+}
+
+.btn--deemph:link,
+.btn--deemph:visited {
+  background-color: #fff;
+  color: #555;
+}
+.btn--deemph:hover,
+.btn--deemph:active {
+  background-color: #fdf2e9;
+  /* Trick to add border INSIDE element */
+  box-shadow: inset 0px 0px 0px 3px #fff;
+}
+
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem;
+}
+
+.btn--form:hover {
+  background-color: #fdf2e9;
+  color: #45260a;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: #e67e22;
+  text-decoration: none;
+  border-bottom: solid 1px currentColor;
+  padding-bottom: 0.2rem;
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+  color: #cf711f;
+  border-bottom: solid 1px transparent;
+}
+
+.middle-container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 6.4rem;
+}
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
+
+.grid--align-center {
+  align-items: center;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.center-text {
+  text-align: center !important;
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.5;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  margin-bottom: 9.6rem;
+  line-height: 1.2;
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+.subheading {
+  display: block;
+  font-size: 1.6rem;
+  color: #cf711f;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 1px;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #333;
+  border-radius: 1000px;
+  font-weight: 600;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-checkmark,
+.list-crossmark {
+  width: 3rem;
+  height: 3rem;
+  color: #e67e22;
+}
+
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+*:focus {
+  outline: none;
+  /* outline: 4px dotted #e67e22;
+  outline-offset: 8px; */
+  box-shadow: 0 0 0 0.4rem rgba(230, 125, 34, 0.4);
+}
